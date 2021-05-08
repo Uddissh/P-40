@@ -57,18 +57,19 @@ class Game{
                        
                      if(index === player.index){
                          
+                         // to display player name on the basket.
                          fill("black");
                          textSize(25);
                          text(allPlayers[plr].name ,x-25,y+25);
                          
-                         
                      }
+                    
+                     //text to display player score.
                      fill("white");
                      textSize(20);
                      text("player1 :"+ allPlayers.player1.score, 30,50);
                      text("player2 :"+ allPlayers.player2.score, 30,100);
-                     
-                 
+
                  }
                 
                 
@@ -101,12 +102,17 @@ class Game{
                      }
                      fruitGroup.add(fruits);
                      
+                     if (player.index !== null) { 
+                         for (var i = 0; i < fruitGroup.length; i++) { 
+                         if (fruitGroup.get(i).isTouching(players)) { 
+                             fruitGroup.get(i).destroy(); 
+                             player.score =player.score+1; 
+                             player.update(); 
+                            } 
+                        } 
+                    }
+
                  }
-                 
-                  if (player.index !== null) {
-                     //fill code here, to destroy the objects.
-                     
-                  }            
     }
 
     end(){
