@@ -57,12 +57,17 @@ class Game{
                        
                      if(index === player.index){
                          
-                         // to display player name on the basket.
-
+                         fill("black");
+                         textSize(25);
+                         text(allPlayers[plr].name ,x-25,y+25);
+                         
                          
                      }
-                    
-                     //text to display player score.
+                     fill("white");
+                     textSize(20);
+                     text("player1 :"+ allPlayers.player1.score, 30,50);
+                     text("player2 :"+ allPlayers.player2.score, 30,100);
+                     
                  
                  }
                 
@@ -96,14 +101,12 @@ class Game{
                      }
                      fruitGroup.add(fruits);
                      
-                     if (player.index !== null) {
-                        //fill code here, to destroy the objects. (Use the one in the class project 39)
-                            fruits.visible=false;
-                        // add the condition to calculate the score. and use update ti update the values in the database.
-                        player.score += 1;
-                     }
-
                  }
+                 
+                  if (player.index !== null) {
+                     //fill code here, to destroy the objects.
+                     
+                  }            
     }
 
     end(){
